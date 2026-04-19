@@ -21,3 +21,7 @@ jobs:
 
       - name: build docker image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/ci.secret:latest .
+
+      - name: Push docker image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/ci.secret:latest
+
