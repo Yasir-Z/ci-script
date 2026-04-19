@@ -1,4 +1,3 @@
-# Workflow start here
 name: docker-workflow
 
 on:
