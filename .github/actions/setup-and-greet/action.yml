@@ -1,0 +1,30 @@
+name: composit-action
+
+on:
+  push:
+    branches:
+      - main
+
+  inputs:
+    name:
+      required: true
+    language:
+      default: 'en'
+  outputs:
+    greeted:
+      value: ${{ steps.set_output.outputs.greeted }}
+
+
+jobs:
+  custom-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting in the specified language
+        run: echo "$GREETING, ${{ inputs.name }}"
+
+      - name: Print the current date and runner OS
+        run: echo "${{runner.os}}"
+
+      - name: set output
+        id: set_output
+        run: echo "greeted=true" >> $GITHUB_OUTPUT
