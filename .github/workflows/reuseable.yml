@@ -24,7 +24,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: print 
-        run: echo "Building ${{ env.APP_NAME }} for environment  $GITHUB_ENV"
+        run: echo "Building ${{ inputs.app_name }} for environment  ${{ inputs.environment }}"
 
       - name: print docker token
-        run: echo "Docker token is set':' true"
+        run: |
+          if: [ -n "${{ secrets.docker_token }}" ]; then
+            echo "Docker token is set':' true"
+          else:
+            echo "Docker token is set':' false"
+          fi
