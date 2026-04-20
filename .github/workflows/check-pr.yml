@@ -15,4 +15,4 @@ jobs:
       - name: fail if size is more than 1MB
         uses: pelotech/github-action-file-size-checker@v0.1.2
         with:
-          max_file_size_kib: '1000'
+          max_file_size_kib: '100'
