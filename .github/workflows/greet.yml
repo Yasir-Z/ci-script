@@ -1,0 +1,22 @@
+name: greet-call
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: greet
+        uses: greet_step
+        uses: ./.github/actions/setup-and-greet
+        with:
+          name: "World"
+          language: "en"
+
+      - name: Show output
+        run: echo "Greeted output: ${{ steps.greet_step.outputs.greeted }}"  
