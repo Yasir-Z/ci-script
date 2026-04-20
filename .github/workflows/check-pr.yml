@@ -24,7 +24,7 @@ jobs:
       - name: branch-name-check
         run: |
           echo "Branch name is: ${{ github.head_ref }}"
-           if [[ ! "${{ github.head_ref }}" =~ ^(feature|fix|docs)/ ]]; then
-          echo "Invalid branch name. Use feature/*, fix/*, or docs/*"
-          exit 1
-        fi
+          if [[ ! "${{ github.head_ref }}" =~ ^(feature|fix|docs)/ ]]; then
+            echo "Invalid branch name. Use feature/*, fix/*, or docs/*"
+            exit 1
+          fi
