@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: greet
-        uses: greet_step
+        id: greet_step
         uses: ./.github/actions/setup-and-greet
         with:
           name: "World"
