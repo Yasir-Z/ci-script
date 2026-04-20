@@ -1,27 +1,14 @@
-# workflow starts here 
-name: docker-workflow
+name: ci-image-build
 
 on:
   push:
     branches:
       - main
-  
+
 jobs:
-  docker-image:
+  ci-image:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
+      - name: check the code
         uses: actions/checkout@v4
-
-      - name: Docker login 
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
-
-      - name: build docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/ci.secret:latest .
-
-      - name: Push docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/ci.secret:latest
 
