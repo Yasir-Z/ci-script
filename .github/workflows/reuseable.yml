@@ -9,7 +9,7 @@ on:
         required: true
       environment:
         type: string
-        required: ture
+        required: true
         default: staging 
 
     secrets:
