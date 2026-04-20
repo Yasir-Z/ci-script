@@ -19,4 +19,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print outputs
-        run: echo "build_version: ${{ needs.call-build.outputs.build_version }}"
+        run: echo "build_version":" ${{ needs.call-build.outputs.build_version }}"
