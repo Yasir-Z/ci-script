@@ -27,4 +27,4 @@ jobs:
         run: echo "Building ${{ env.APP_NAME }} for environment  $GITHUB_ENV"
 
       - name: print docker token
-        run: echo "Docker token is set: true"
+        run: echo "Docker token is set':' true"
