@@ -1,12 +1,10 @@
-def add(a, b):
-    return a + b
+from flask import Flask
 
-def main():
-    result = add(2, 3)
-    print(f"Result: {result}")
+app = Flask(__name__)
 
-    # Simulate a test condition
-    assert result == 5, "Test failed!"
+@app.route("/")
+def home():
+    return "Hello from Docker!"
 
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=5000)
