@@ -21,3 +21,8 @@ jobs:
       - name: build docker image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/my-app:latest .
 
+      - name: list docker images
+        run: docker images
+
+
+
