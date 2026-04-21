@@ -19,4 +19,4 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: buld and tag image
-        run: docker build -t app-js .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/app-js:latest .
