@@ -13,6 +13,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: set file size limit
-        uses: uses: [pelotech/github-action-file-size-checker@v0.1.2](https://github.com/marketplace/actions/file-size-checker)
+        uses: uses: pelotech/github-action-file-size-checker@v0.1.2
         with:
           max_file_size_kib: '50'
