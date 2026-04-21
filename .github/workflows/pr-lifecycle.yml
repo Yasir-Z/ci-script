@@ -14,3 +14,14 @@ jobs:
       - name: Print which event type fired
         run: echo "The even is':' ${{ github.event.action }}"    
 
+      - name: Print pr title
+        run: echo "The PR title':' ${{ github.event.pull_request.title }}"
+
+      - name: Print the PR author
+        run: echo "The author is ':' ${{ github.event.pull_request.user.login }}"
+
+      - name: Print the source branch 
+        run: echo "The source branch ':'  ${{ github.head_ref }} and target branch  ${{ github.base_ref }}"
+
+
+
