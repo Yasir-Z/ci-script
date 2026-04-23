@@ -12,7 +12,17 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
+      - name: greet
+        run: echo "Hello world"
+  
+      - name: create test file
+        run: |
+          dd if=/dev/urandom of=test-file.txt bs=1024 count=60
+          git add test-file.txt
+
       - name: set file size limit
         uses: pelotech/github-action-file-size-checker@v0.1.2
         with:
           max_file_size_kib: '50'
+
+
